@@ -19,7 +19,7 @@ date_default_timezone_set('Asia/Shanghai');
 session_start();
 error_reporting(1);
 $filefolder = "./";
-$sitetitle = 'FileBox';
+$sitetitle = $_SERVER['HTTP_HOST'];
 $user = 'admin';
 $pass = 'admin';
 $safe_num = 5;//设置多少次后禁止登陆，为0则不限制，建议为3-5
