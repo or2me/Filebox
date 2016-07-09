@@ -1,29 +1,29 @@
-<?php
+ï»¿<?php
 /* ---------------------------------------------------- */
-/* ³ÌĞòÃû³Æ: PHPÌ½Õë-Yahei
-/* ³ÌĞò¹¦ÄÜ: Ì½²âÏµÍ³µÄWeb·şÎñÆ÷ÔËĞĞ»·¾³
-/* ³ÌĞò¿ª·¢: Yahei.Net
-/* ÁªÏµ·½Ê½: info@Yahei.net
+/* ç¨‹åºåç§°: PHPæ¢é’ˆ-Yahei
+/* ç¨‹åºåŠŸèƒ½: æ¢æµ‹ç³»ç»Ÿçš„WebæœåŠ¡å™¨è¿è¡Œç¯å¢ƒ
+/* ç¨‹åºå¼€å‘: Yahei.Net
+/* è”ç³»æ–¹å¼: info@Yahei.net
 /* Date: 1970-01-01 / 2012-07-08
 /* ---------------------------------------------------- */
-/* Ê¹ÓÃÌõ¿î:
-/* 1.¸ÃÈí¼şÃâ·ÑÊ¹ÓÃ.
-/* 2.½ûÖ¹ÈÎºÎÑÜÉú°æ±¾.
+/* ä½¿ç”¨æ¡æ¬¾:
+/* 1.è¯¥è½¯ä»¶å…è´¹ä½¿ç”¨.
+/* 2.ç¦æ­¢ä»»ä½•è¡ç”Ÿç‰ˆæœ¬.
 /* ---------------------------------------------------- */
-/* ¸ĞĞ»ÒÔÏÂÅóÓÑÎªÌ½Õë×ö³öµÄ¹±Ï×:
-/* zyypp,¿á¤òÁú¾í·ç,ÁúÖÇ³¬,¾Õ»¨Ö×ÁË,ÏĞÈË,Clare Lou,hotsnow
-/* ¶ş½ä,yexinzhu,wangyu1314,Kokgog,gibyasus,üS×Ó«|,A´ó,huli
-/* Ğ¡ËÉ,charwin,»ª¾°ÍøÂç
-/* Äú¿ÉÄÜÊÇÏÂÒ»¸ö?
+/* æ„Ÿè°¢ä»¥ä¸‹æœ‹å‹ä¸ºæ¢é’ˆåšå‡ºçš„è´¡çŒ®:
+/* zyypp,é…·ã‚’é¾™å·é£,é¾™æ™ºè¶…,èŠèŠ±è‚¿äº†,é—²äºº,Clare Lou,hotsnow
+/* äºŒæˆ’,yexinzhu,wangyu1314,Kokgog,gibyasus,é»ƒå­ç…,Aå¤§,huli
+/* å°æ¾,charwin,åæ™¯ç½‘ç»œ
+/* æ‚¨å¯èƒ½æ˜¯ä¸‹ä¸€ä¸ª?
 /* ---------------------------------------------------- */
-error_reporting(0); //ÒÖÖÆËùÓĞ´íÎóĞÅÏ¢
-@header("content-Type: text/html; charset=utf-8"); //ÓïÑÔÇ¿ÖÆ
+error_reporting(0); //æŠ‘åˆ¶æ‰€æœ‰é”™è¯¯ä¿¡æ¯
+@header("content-Type: text/html; charset=utf-8"); //è¯­è¨€å¼ºåˆ¶
 ob_start();
-date_default_timezone_set('Asia/Shanghai');//´Ë¾äÓÃÓÚÏû³ıÊ±¼ä²î
+date_default_timezone_set('Asia/Shanghai');//æ­¤å¥ç”¨äºæ¶ˆé™¤æ—¶é—´å·®
 
-$title = 'ÑÅºÚPHPÌ½Õë[¼òÌå°æ]';
+$title = 'é›…é»‘PHPæ¢é’ˆ[ç®€ä½“ç‰ˆ]';
 
-$version = "v0.4.7"; //°æ±¾ºÅ
+$version = "v0.4.7"; //ç‰ˆæœ¬å·
 
 
 
@@ -45,7 +45,7 @@ function memory_usage()
 }
 
 
-// ¼ÆÊ±
+// è®¡æ—¶
 
 function microtime_float() 
 {
@@ -59,7 +59,7 @@ function microtime_float()
 }
 
 
-//µ¥Î»×ª»»
+//å•ä½è½¬æ¢
 function formatsize($size) 
 {
 	$danwei=array(' B ',' K ',' M ',' G ',' T ');
@@ -95,7 +95,7 @@ function valid_email($str)
 }
 
 
-//¼ì²âPHPÉèÖÃ²ÎÊı
+//æ£€æµ‹PHPè®¾ç½®å‚æ•°
 
 function show($varName)
 {
@@ -105,14 +105,14 @@ function show($varName)
 
 		case 0:
 
-			return '<font color="red">¡Á</font>';
+			return '<font color="red">Ã—</font>';
 
 		break;
 		
 
 		case 1:
 
-			return '<font color="green">¡Ì</font>';
+			return '<font color="green">âˆš</font>';
 
 		break;
 		
@@ -129,13 +129,13 @@ function show($varName)
 
 
 
-//±£Áô·şÎñÆ÷ĞÔÄÜ²âÊÔ½á¹û
+//ä¿ç•™æœåŠ¡å™¨æ€§èƒ½æµ‹è¯•ç»“æœ
 
-$valInt = isset($_POST['pInt']) ? $_POST['pInt'] : "Î´²âÊÔ";
+$valInt = isset($_POST['pInt']) ? $_POST['pInt'] : "æœªæµ‹è¯•";
 
-$valFloat = isset($_POST['pFloat']) ? $_POST['pFloat'] : "Î´²âÊÔ";
+$valFloat = isset($_POST['pFloat']) ? $_POST['pFloat'] : "æœªæµ‹è¯•";
 
-$valIo = isset($_POST['pIo']) ? $_POST['pIo'] : "Î´²âÊÔ";
+$valIo = isset($_POST['pIo']) ? $_POST['pIo'] : "æœªæµ‹è¯•";
 
 
 
@@ -147,26 +147,26 @@ if ($_GET['act'] == "phpinfo")
 	exit();
 
 } 
-elseif($_POST['act'] == "ÕûĞÍ²âÊÔ")
+elseif($_POST['act'] == "æ•´å‹æµ‹è¯•")
 {
 
 	$valInt = test_int();
 
 } 
-elseif($_POST['act'] == "¸¡µã²âÊÔ")
+elseif($_POST['act'] == "æµ®ç‚¹æµ‹è¯•")
 {
 
 	$valFloat = test_float();
 
 } 
-elseif($_POST['act'] == "IO²âÊÔ")
+elseif($_POST['act'] == "IOæµ‹è¯•")
 {
 
 	$valIo = test_io();
 
 } 
-//ÍøËÙ²âÊÔ-¿ªÊ¼
-elseif($_POST['act']=="¿ªÊ¼²âÊÔ")
+//ç½‘é€Ÿæµ‹è¯•-å¼€å§‹
+elseif($_POST['act']=="å¼€å§‹æµ‹è¯•")
 {
 ?>
 	<script language="javascript" type="text/javascript">
@@ -188,7 +188,7 @@ elseif($_POST['act']=="¿ªÊ¼²âÊÔ")
 	</script>
 <?php
 }
-//ÍøËÙ²âÊÔ-½áÊø
+//ç½‘é€Ÿæµ‹è¯•-ç»“æŸ
 elseif($_GET['act'] == "Function")
 {
 	$arr = get_defined_functions();
@@ -196,7 +196,7 @@ elseif($_GET['act'] == "Function")
 	{
 	}
 	echo "<pre>";
-	Echo "ÕâÀïÏÔÊ¾ÏµÍ³ËùÖ§³ÖµÄËùÓĞº¯Êı,ºÍ×Ô¶¨Òåº¯Êı\n";
+	Echo "è¿™é‡Œæ˜¾ç¤ºç³»ç»Ÿæ‰€æ”¯æŒçš„æ‰€æœ‰å‡½æ•°,å’Œè‡ªå®šä¹‰å‡½æ•°\n";
 	print_r($arr);
 	echo "</pre>";
 	exit();
@@ -205,7 +205,7 @@ elseif($_GET['act'] == "Function")
 	$disFuns=get_cfg_var("disable_functions");
 	if(empty($disFuns))
 	{
-		$arr = '<font color=red>¡Á</font>';
+		$arr = '<font color=red>Ã—</font>';
 	}
 	else
 	{ 
@@ -215,7 +215,7 @@ elseif($_GET['act'] == "Function")
 	{
 	}
 	echo "<pre>";
-	Echo "ÕâÀïÏÔÊ¾ÏµÍ³±»½ûÓÃµÄº¯Êı\n";
+	Echo "è¿™é‡Œæ˜¾ç¤ºç³»ç»Ÿè¢«ç¦ç”¨çš„å‡½æ•°\n";
 	print_r($arr);
 	echo "</pre>";
 	exit();
@@ -223,9 +223,9 @@ elseif($_GET['act'] == "Function")
 
 
 
-//MySQL¼ì²â
+//MySQLæ£€æµ‹
 
-if ($_POST['act'] == 'MySQL¼ì²â')
+if ($_POST['act'] == 'MySQLæ£€æµ‹')
 {
 
 	$host = isset($_POST['host']) ? trim($_POST['host']) : '';
@@ -245,24 +245,24 @@ if ($_POST['act'] == 'MySQL¼ì²â')
 	$password = is_string($password) ? htmlspecialchars($password) : '';
 
 }
-elseif ($_POST['act'] == 'º¯Êı¼ì²â')
+elseif ($_POST['act'] == 'å‡½æ•°æ£€æµ‹')
 {
 
-	$funRe = "º¯Êı".$_POST['funName']."Ö§³Ö×´¿ö¼ì²â½á¹û£º".isfun1($_POST['funName']);
+	$funRe = "å‡½æ•°".$_POST['funName']."æ”¯æŒçŠ¶å†µæ£€æµ‹ç»“æœï¼š".isfun1($_POST['funName']);
 
 } 
-elseif ($_POST['act'] == 'ÓÊ¼ş¼ì²â')
+elseif ($_POST['act'] == 'é‚®ä»¶æ£€æµ‹')
 {
 
-	$mailRe = "ÓÊ¼ş·¢ËÍ¼ì²â½á¹û£º·¢ËÍ";
+	$mailRe = "é‚®ä»¶å‘é€æ£€æµ‹ç»“æœï¼šå‘é€";
 	if($_SERVER['SERVER_PORT']==80){$mailContent = "http://".$_SERVER['SERVER_NAME'].($_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME']);}
 	else{$mailContent = "http://".$_SERVER['SERVER_NAME'].":".$_SERVER['SERVER_PORT'].($_SERVER['PHP_SELF'] ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME']);}
-	$mailRe .= (false !== @mail($_POST["mailAdd"], $mailContent, "This is a test mail!")) ? "Íê³É":"Ê§°Ü";
+	$mailRe .= (false !== @mail($_POST["mailAdd"], $mailContent, "This is a test mail!")) ? "å®Œæˆ":"å¤±è´¥";
 
 }
 
 
-//ÍøÂçËÙ¶È²âÊÔ
+//ç½‘ç»œé€Ÿåº¦æµ‹è¯•
 if(isset($_POST['speed']))
 {
 	$speed=round(100/($_POST['speed']/1000),2);
@@ -273,33 +273,33 @@ elseif($_GET['speed']=="0")
 }
 elseif(isset($_GET['speed']) and $_GET['speed']>0)
 {
-	$speed=round(100/($_GET['speed']/1000),2); //ÏÂÔØËÙ¶È£º$speed kb/s
+	$speed=round(100/($_GET['speed']/1000),2); //ä¸‹è½½é€Ÿåº¦ï¼š$speed kb/s
 }
 else
 {
-	$speed="<font color=\"red\">&nbsp;Î´Ì½²â&nbsp;</font>";
+	$speed="<font color=\"red\">&nbsp;æœªæ¢æµ‹&nbsp;</font>";
 }	
 	
 	
 
-// ¼ì²âº¯ÊıÖ§³Ö
+// æ£€æµ‹å‡½æ•°æ”¯æŒ
 
 function isfun($funName = '')
 {
 
-    if (!$funName || trim($funName) == '' || preg_match('~[^a-z0-9\_]+~i', $funName, $tmp)) return '´íÎó';
+    if (!$funName || trim($funName) == '' || preg_match('~[^a-z0-9\_]+~i', $funName, $tmp)) return 'é”™è¯¯';
 
-	return (false !== function_exists($funName)) ? '<font color="green">¡Ì</font>' : '<font color="red">¡Á</font>';
+	return (false !== function_exists($funName)) ? '<font color="green">âˆš</font>' : '<font color="red">Ã—</font>';
 }
 function isfun1($funName = '')
 {
-    if (!$funName || trim($funName) == '' || preg_match('~[^a-z0-9\_]+~i', $funName, $tmp)) return '´íÎó';
-	return (false !== function_exists($funName)) ? '¡Ì' : '¡Á';
+    if (!$funName || trim($funName) == '' || preg_match('~[^a-z0-9\_]+~i', $funName, $tmp)) return 'é”™è¯¯';
+	return (false !== function_exists($funName)) ? 'âˆš' : 'Ã—';
 }
 
 
 
-//ÕûÊıÔËËãÄÜÁ¦²âÊÔ
+//æ•´æ•°è¿ç®—èƒ½åŠ›æµ‹è¯•
 
 function test_int()
 {
@@ -317,7 +317,7 @@ function test_int()
 
 	$time = ($timeEnd["usec"]-$timeStart["usec"])/1000000+$timeEnd["sec"]-$timeStart["sec"];
 
-	$time = round($time, 3)."Ãë";
+	$time = round($time, 3)."ç§’";
 
 	return $time;
 
@@ -325,12 +325,12 @@ function test_int()
 
 
 
-//¸¡µãÔËËãÄÜÁ¦²âÊÔ
+//æµ®ç‚¹è¿ç®—èƒ½åŠ›æµ‹è¯•
 
 function test_float()
 {
 
-	//µÃµ½Ô²ÖÜÂÊÖµ
+	//å¾—åˆ°åœ†å‘¨ç‡å€¼
 
 	$t = pi();
 
@@ -341,7 +341,7 @@ function test_float()
 	for($i = 0; $i < 3000000; $i++)
 	{
 
-		//¿ªÆ½·½
+		//å¼€å¹³æ–¹
 
 		sqrt($t);
 
@@ -353,7 +353,7 @@ function test_float()
 
 	$time = ($timeEnd["usec"]-$timeStart["usec"])/1000000+$timeEnd["sec"]-$timeStart["sec"];
 
-	$time = round($time, 3)."Ãë";
+	$time = round($time, 3)."ç§’";
 
 	return $time;
 
@@ -361,7 +361,7 @@ function test_float()
 
 
 
-//IOÄÜÁ¦²âÊÔ
+//IOèƒ½åŠ›æµ‹è¯•
 
 function test_io()
 {
@@ -385,7 +385,7 @@ function test_io()
 
 	$time = ($timeEnd["usec"]-$timeStart["usec"])/1000000+$timeEnd["sec"]-$timeStart["sec"];
 
-	$time = round($time, 3)."Ãë";
+	$time = round($time, 3)."ç§’";
 
 	return($time);
 
@@ -396,11 +396,11 @@ function GetCpuPercentages($stat1, $stat2) {if(count($stat1)!==count($stat2)){re
 $stat1 = GetCoreInformation();sleep(1);$stat2 = GetCoreInformation();$data = GetCpuPercentages($stat1, $stat2);
 $cpu_show = $data['cpu0']['user']."%us,  ".$data['cpu0']['sys']."%sy,  ".$data['cpu0']['nice']."%ni, ".$data['cpu0']['idle']."%id,  ".$data['cpu0']['iowait']."%wa,  ".$data['cpu0']['irq']."%irq,  ".$data['cpu0']['softirq']."%softirq";
 function makeImageUrl($title, $data) {$api='http://api.yahei.net/tz/cpu_show.php?id=';$url.=$data['user'].',';$url.=$data['nice'].',';$url.=$data['sys'].',';$url.=$data['idle'].',';$url.=$data['iowait'];$url.='&chdl=User|Nice|Sys|Idle|Iowait&chdlp=b&chl=';$url.=$data['user'].'%25|';$url.=$data['nice'].'%25|';$url.=$data['sys'].'%25|';$url.=$data['idle'].'%25|';$url.=$data['iowait'].'%25';$url.='&chtt=Core+'.$title;return $api.base64_encode($url);}
-if($_GET['act'] == "cpu_percentage"){echo "<center><b><font face='Microsoft YaHei' color='#666666' size='3'>Í¼Æ¬¼ÓÔØÂı£¬ÇëÄÍĞÄµÈ´ı£¡</font></b><br /><br />";foreach( $data as $k => $v ) {echo '<img src="' . makeImageUrl( $k, $v ) . '" style="width:360px;height:240px;border: #CCCCCC 1px solid;background: #FFFFFF;margin:5px;padding:5px;" />';}echo "</center>";exit();}
+if($_GET['act'] == "cpu_percentage"){echo "<center><b><font face='Microsoft YaHei' color='#666666' size='3'>å›¾ç‰‡åŠ è½½æ…¢ï¼Œè¯·è€å¿ƒç­‰å¾…ï¼</font></b><br /><br />";foreach( $data as $k => $v ) {echo '<img src="' . makeImageUrl( $k, $v ) . '" style="width:360px;height:240px;border: #CCCCCC 1px solid;background: #FFFFFF;margin:5px;padding:5px;" />';}echo "</center>";exit();}
 
 
 
-// ¸ù¾İ²»Í¬ÏµÍ³È¡µÃCPUÏà¹ØĞÅÏ¢
+// æ ¹æ®ä¸åŒç³»ç»Ÿå–å¾—CPUç›¸å…³ä¿¡æ¯
 
 switch(PHP_OS)
 {
@@ -434,7 +434,7 @@ switch(PHP_OS)
 
 
 
-//linuxÏµÍ³Ì½²â
+//linuxç³»ç»Ÿæ¢æµ‹
 
 function sys_linux()
 
@@ -477,9 +477,9 @@ function sys_linux()
 		if($res['cpu']['num']==1)
 			$x1 = '';
 		else
-			$x1 = ' ¡Á'.$res['cpu']['num'];
-		$mhz[1][0] = ' | ÆµÂÊ:'.$mhz[1][0];
-		$cache[1][0] = ' | ¶ş¼¶»º´æ:'.$cache[1][0];
+			$x1 = ' Ã—'.$res['cpu']['num'];
+		$mhz[1][0] = ' | é¢‘ç‡:'.$mhz[1][0];
+		$cache[1][0] = ' | äºŒçº§ç¼“å­˜:'.$cache[1][0];
 		$bogomips[1][0] = ' | Bogomips:'.$bogomips[1][0];
 		$res['cpu']['model'][] = $model[1][0].$mhz[1][0].$cache[1][0].$bogomips[1][0].$x1;
 
@@ -515,11 +515,11 @@ function sys_linux()
 
     $min = floor($min - ($days * 60 * 24) - ($hours * 60));
 
-    if ($days !== 0) $res['uptime'] = $days."Ìì";
+    if ($days !== 0) $res['uptime'] = $days."å¤©";
 
-    if ($hours !== 0) $res['uptime'] .= $hours."Ğ¡Ê±";
+    if ($hours !== 0) $res['uptime'] .= $hours."å°æ—¶";
 
-    $res['uptime'] .= $min."·ÖÖÓ";
+    $res['uptime'] .= $min."åˆ†é’Ÿ";
 
 
     // MEMORY
@@ -544,11 +544,11 @@ function sys_linux()
     $res['memPercent'] = (floatval($res['memTotal'])!=0)?round($res['memUsed']/$res['memTotal']*100,2):0;
 
 
-    $res['memRealUsed'] = $res['memTotal'] - $res['memFree'] - $res['memCached'] - $res['memBuffers']; //ÕæÊµÄÚ´æÊ¹ÓÃ
-	$res['memRealFree'] = $res['memTotal'] - $res['memRealUsed']; //ÕæÊµ¿ÕÏĞ
-    $res['memRealPercent'] = (floatval($res['memTotal'])!=0)?round($res['memRealUsed']/$res['memTotal']*100,2):0; //ÕæÊµÄÚ´æÊ¹ÓÃÂÊ
+    $res['memRealUsed'] = $res['memTotal'] - $res['memFree'] - $res['memCached'] - $res['memBuffers']; //çœŸå®å†…å­˜ä½¿ç”¨
+	$res['memRealFree'] = $res['memTotal'] - $res['memRealUsed']; //çœŸå®ç©ºé—²
+    $res['memRealPercent'] = (floatval($res['memTotal'])!=0)?round($res['memRealUsed']/$res['memTotal']*100,2):0; //çœŸå®å†…å­˜ä½¿ç”¨ç‡
 
-	$res['memCachedPercent'] = (floatval($res['memCached'])!=0)?round($res['memCached']/$res['memTotal']*100,2):0; //CachedÄÚ´æÊ¹ÓÃÂÊ
+	$res['memCachedPercent'] = (floatval($res['memCached'])!=0)?round($res['memCached']/$res['memTotal']*100,2):0; //Cachedå†…å­˜ä½¿ç”¨ç‡
 
     $res['swapTotal'] = round($buf[4][0]/1024, 2);
 
@@ -576,7 +576,7 @@ function sys_linux()
 
 
 
-//FreeBSDÏµÍ³Ì½²â
+//FreeBSDç³»ç»Ÿæ¢æµ‹
 
 function sys_freebsd()
 {
@@ -609,11 +609,11 @@ function sys_freebsd()
 
 	$min = floor($min - ($days * 60 * 24) - ($hours * 60));
 
-	if ($days !== 0) $res['uptime'] = $days."Ìì";
+	if ($days !== 0) $res['uptime'] = $days."å¤©";
 
-	if ($hours !== 0) $res['uptime'] .= $hours."Ğ¡Ê±";
+	if ($hours !== 0) $res['uptime'] .= $hours."å°æ—¶";
 
-	$res['uptime'] .= $min."·ÖÖÓ";
+	$res['uptime'] .= $min."åˆ†é’Ÿ";
 
 	//MEMORY
 
@@ -649,7 +649,7 @@ function sys_freebsd()
 
 
 
-//È¡µÃ²ÎÊıÖµ FreeBSD
+//å–å¾—å‚æ•°å€¼ FreeBSD
 
 function get_key($keyName)
 {
@@ -660,7 +660,7 @@ function get_key($keyName)
 
 
 
-//È·¶¨Ö´ĞĞÎÄ¼şÎ»ÖÃ FreeBSD
+//ç¡®å®šæ‰§è¡Œæ–‡ä»¶ä½ç½® FreeBSD
 
 function find_command($commandName)
 {
@@ -680,7 +680,7 @@ function find_command($commandName)
 
 
 
-//Ö´ĞĞÏµÍ³ÃüÁî FreeBSD
+//æ‰§è¡Œç³»ç»Ÿå‘½ä»¤ FreeBSD
 
 function do_command($commandName, $args)
 {
@@ -709,7 +709,7 @@ function do_command($commandName, $args)
 
 
 
-//windowsÏµÍ³Ì½²â
+//windowsç³»ç»Ÿæ¢æµ‹
 
 function sys_windows()
 {
@@ -757,7 +757,7 @@ function sys_windows()
 	if($res['cpu']['num']==1)
 		$x1 = '';
 	else
-		$x1 = ' ¡Á'.$res['cpu']['num'];
+		$x1 = ' Ã—'.$res['cpu']['num'];
 	$res['cpu']['model'] = $cpuinfo[0]['Name'].$cpuinfo[0]['L2CacheSize'].$x1;
 
 	// SYSINFO
@@ -768,7 +768,7 @@ function sys_windows()
 
 	$sysinfo[0]['CSDVersion']=iconv('GBK', 'UTF-8',$sysinfo[0]['CSDVersion']);
 
-	$res['win_n'] = $sysinfo[0]['Caption']." ".$sysinfo[0]['CSDVersion']." ĞòÁĞºÅ:{$sysinfo[0]['SerialNumber']} ÓÚ".date('YÄêmÔÂdÈÕH:i:s',strtotime(substr($sysinfo[0]['InstallDate'],0,14)))."°²×°";
+	$res['win_n'] = $sysinfo[0]['Caption']." ".$sysinfo[0]['CSDVersion']." åºåˆ—å·:{$sysinfo[0]['SerialNumber']} äº".date('Yå¹´mæœˆdæ—¥H:i:s',strtotime(substr($sysinfo[0]['InstallDate'],0,14)))."å®‰è£…";
 
 	//UPTIME
 
@@ -787,11 +787,11 @@ function sys_windows()
 
 	$min = floor($min - ($days * 60 * 24) - ($hours * 60));
 
-	if ($days !== 0) $res['uptime'] = $days."Ìì";
+	if ($days !== 0) $res['uptime'] = $days."å¤©";
 
-	if ($hours !== 0) $res['uptime'] .= $hours."Ğ¡Ê±";
+	if ($hours !== 0) $res['uptime'] .= $hours."å°æ—¶";
 
-	$res['uptime'] .= $min."·ÖÖÓ";
+	$res['uptime'] .= $min."åˆ†é’Ÿ";
 
 
 	//MEMORY
@@ -800,7 +800,7 @@ function sys_windows()
 
 	$res['memFree'] = round($sysinfo[0]['FreePhysicalMemory']/1024,2);
 
-	$res['memUsed'] = $res['memTotal']-$res['memFree'];	//ÉÏÃæÁ½ĞĞÒÑ¾­³ıÒÔ1024,ÕâĞĞ²»ÓÃÔÙ³ıÁË
+	$res['memUsed'] = $res['memTotal']-$res['memFree'];	//ä¸Šé¢ä¸¤è¡Œå·²ç»é™¤ä»¥1024,è¿™è¡Œä¸ç”¨å†é™¤äº†
 
 	$res['memPercent'] = round($res['memUsed'] / $res['memTotal']*100,2);
 
@@ -875,7 +875,7 @@ function GetWMI($wmi,$strClass, $strValue = array())
 
 
 
-//±ÈÀıÌõ
+//æ¯”ä¾‹æ¡
 
 function bar($percent)
 {
@@ -890,38 +890,38 @@ function bar($percent)
 
 
 
-$uptime = $sysInfo['uptime']; //ÔÚÏßÊ±¼ä
+$uptime = $sysInfo['uptime']; //åœ¨çº¿æ—¶é—´
 
-$stime = date('Y-m-d H:i:s'); //ÏµÍ³µ±Ç°Ê±¼ä
+$stime = date('Y-m-d H:i:s'); //ç³»ç»Ÿå½“å‰æ—¶é—´
 
-//Ó²ÅÌ
+//ç¡¬ç›˜
 
-$dt = round(@disk_total_space(".")/(1024*1024*1024),3); //×Ü
-$df = round(@disk_free_space(".")/(1024*1024*1024),3); //¿ÉÓÃ
-$du = $dt-$df; //ÒÑÓÃ
+$dt = round(@disk_total_space(".")/(1024*1024*1024),3); //æ€»
+$df = round(@disk_free_space(".")/(1024*1024*1024),3); //å¯ç”¨
+$du = $dt-$df; //å·²ç”¨
 $hdPercent = (floatval($dt)!=0)?round($du/$dt*100,2):0;
 
-$load = $sysInfo['loadAvg'];	//ÏµÍ³¸ºÔØ
+$load = $sysInfo['loadAvg'];	//ç³»ç»Ÿè´Ÿè½½
 
 
-//ÅĞ¶ÏÄÚ´æÈç¹ûĞ¡ÓÚ1G£¬¾ÍÏÔÊ¾M£¬·ñÔòÏÔÊ¾Gµ¥Î»
+//åˆ¤æ–­å†…å­˜å¦‚æœå°äº1Gï¼Œå°±æ˜¾ç¤ºMï¼Œå¦åˆ™æ˜¾ç¤ºGå•ä½
 if($sysInfo['memTotal']<1024)
 {
 	$memTotal = $sysInfo['memTotal']." M";
 	$mt = $sysInfo['memTotal']." M";
 	$mu = $sysInfo['memUsed']." M";
 	$mf = $sysInfo['memFree']." M";
-	$mc = $sysInfo['memCached']." M";	//cache»¯ÄÚ´æ
-	$mb = $sysInfo['memBuffers']." M";	//»º³å
+	$mc = $sysInfo['memCached']." M";	//cacheåŒ–å†…å­˜
+	$mb = $sysInfo['memBuffers']." M";	//ç¼“å†²
 	$st = $sysInfo['swapTotal']." M";
 	$su = $sysInfo['swapUsed']." M";
 	$sf = $sysInfo['swapFree']." M";
 	$swapPercent = $sysInfo['swapPercent'];
-	$memRealUsed = $sysInfo['memRealUsed']." M"; //ÕæÊµÄÚ´æÊ¹ÓÃ
-	$memRealFree = $sysInfo['memRealFree']." M"; //ÕæÊµÄÚ´æ¿ÕÏĞ
-	$memRealPercent = $sysInfo['memRealPercent']; //ÕæÊµÄÚ´æÊ¹ÓÃ±ÈÂÊ
-	$memPercent = $sysInfo['memPercent']; //ÄÚ´æ×ÜÊ¹ÓÃÂÊ
-	$memCachedPercent = $sysInfo['memCachedPercent']; //cacheÄÚ´æÊ¹ÓÃÂÊ
+	$memRealUsed = $sysInfo['memRealUsed']." M"; //çœŸå®å†…å­˜ä½¿ç”¨
+	$memRealFree = $sysInfo['memRealFree']." M"; //çœŸå®å†…å­˜ç©ºé—²
+	$memRealPercent = $sysInfo['memRealPercent']; //çœŸå®å†…å­˜ä½¿ç”¨æ¯”ç‡
+	$memPercent = $sysInfo['memPercent']; //å†…å­˜æ€»ä½¿ç”¨ç‡
+	$memCachedPercent = $sysInfo['memCachedPercent']; //cacheå†…å­˜ä½¿ç”¨ç‡
 }
 else
 {
@@ -935,15 +935,15 @@ else
 	$su = round($sysInfo['swapUsed']/1024,3)." G";
 	$sf = round($sysInfo['swapFree']/1024,3)." G";
 	$swapPercent = $sysInfo['swapPercent'];
-	$memRealUsed = round($sysInfo['memRealUsed']/1024,3)." G"; //ÕæÊµÄÚ´æÊ¹ÓÃ
-	$memRealFree = round($sysInfo['memRealFree']/1024,3)." G"; //ÕæÊµÄÚ´æ¿ÕÏĞ
-	$memRealPercent = $sysInfo['memRealPercent']; //ÕæÊµÄÚ´æÊ¹ÓÃ±ÈÂÊ
-	$memPercent = $sysInfo['memPercent']; //ÄÚ´æ×ÜÊ¹ÓÃÂÊ
-	$memCachedPercent = $sysInfo['memCachedPercent']; //cacheÄÚ´æÊ¹ÓÃÂÊ
+	$memRealUsed = round($sysInfo['memRealUsed']/1024,3)." G"; //çœŸå®å†…å­˜ä½¿ç”¨
+	$memRealFree = round($sysInfo['memRealFree']/1024,3)." G"; //çœŸå®å†…å­˜ç©ºé—²
+	$memRealPercent = $sysInfo['memRealPercent']; //çœŸå®å†…å­˜ä½¿ç”¨æ¯”ç‡
+	$memPercent = $sysInfo['memPercent']; //å†…å­˜æ€»ä½¿ç”¨ç‡
+	$memCachedPercent = $sysInfo['memCachedPercent']; //cacheå†…å­˜ä½¿ç”¨ç‡
 }
 
 
-//Íø¿¨Á÷Á¿
+//ç½‘å¡æµé‡
 
 $strs = @file("/proc/net/dev"); 
 
@@ -959,7 +959,7 @@ for ($i = 2; $i < count($strs); $i++ )
 }
 
 
-//ajaxµ÷ÓÃÊµÊ±Ë¢ĞÂ
+//ajaxè°ƒç”¨å®æ—¶åˆ·æ–°
 
 if ($_GET['act'] == "rt")
 
@@ -1172,39 +1172,39 @@ function displayData(dataJSON)
 	
 	<table>
 		<tr>
-			<th class="w_logo">ÑÅºÚPHPÌ½Õë</th>
-			<th class="w_top"><a href="#w_php">PHP²ÎÊı</a></th>
-			<th class="w_top"><a href="#w_module">×é¼şÖ§³Ö</a></th>
-			<th class="w_top"><a href="#w_module_other">µÚÈı·½×é¼ş</a></th>
-			<th class="w_top"><a href="#w_db">Êı¾İ¿âÖ§³Ö</a></th>
-			<th class="w_top"><a href="#w_performance">ĞÔÄÜ¼ì²â</a></th>
-			<th class="w_top"><a href="#w_networkspeed">ÍøËÙ¼ì²â</a></th>
-			<th class="w_top"><a href="#w_MySQL">MySQL¼ì²â</a></th>
-			<th class="w_top"><a href="#w_function">º¯Êı¼ì²â</a></th>
-			<th class="w_top"><a href="#w_mail">ÓÊ¼ş¼ì²â</a></th>
-			<th class="w_top"><a href="http://www.yahei.net/tz/tz.zip">Ì½ÕëÏÂÔØ</a></th>
+			<th class="w_logo">é›…é»‘PHPæ¢é’ˆ</th>
+			<th class="w_top"><a href="#w_php">PHPå‚æ•°</a></th>
+			<th class="w_top"><a href="#w_module">ç»„ä»¶æ”¯æŒ</a></th>
+			<th class="w_top"><a href="#w_module_other">ç¬¬ä¸‰æ–¹ç»„ä»¶</a></th>
+			<th class="w_top"><a href="#w_db">æ•°æ®åº“æ”¯æŒ</a></th>
+			<th class="w_top"><a href="#w_performance">æ€§èƒ½æ£€æµ‹</a></th>
+			<th class="w_top"><a href="#w_networkspeed">ç½‘é€Ÿæ£€æµ‹</a></th>
+			<th class="w_top"><a href="#w_MySQL">MySQLæ£€æµ‹</a></th>
+			<th class="w_top"><a href="#w_function">å‡½æ•°æ£€æµ‹</a></th>
+			<th class="w_top"><a href="#w_mail">é‚®ä»¶æ£€æµ‹</a></th>
+			<th class="w_top"><a href="http://www.yahei.net/tz/tz.zip">æ¢é’ˆä¸‹è½½</a></th>
 		</tr>
 	</table>
 
 
 
-<!--·şÎñÆ÷Ïà¹Ø²ÎÊı-->
+<!--æœåŠ¡å™¨ç›¸å…³å‚æ•°-->
 
 <table>
 
-  <tr><th colspan="4">·şÎñÆ÷²ÎÊı</th></tr>
+  <tr><th colspan="4">æœåŠ¡å™¨å‚æ•°</th></tr>
 
   <tr>
 
-    <td>·şÎñÆ÷ÓòÃû/IPµØÖ·</td>
+    <td>æœåŠ¡å™¨åŸŸå/IPåœ°å€</td>
 
-    <td colspan="3"><?php echo @get_current_user();?> - <?php echo $_SERVER['SERVER_NAME'];?>(<?php if('/'==DIRECTORY_SEPARATOR){echo $_SERVER['SERVER_ADDR'];}else{echo @gethostbyname($_SERVER['SERVER_NAME']);} ?>)&nbsp;&nbsp;ÄãµÄIPµØÖ·ÊÇ£º<?php echo @$_SERVER['REMOTE_ADDR'];?></td>
+    <td colspan="3"><?php echo @get_current_user();?> - <?php echo $_SERVER['SERVER_NAME'];?>(<?php if('/'==DIRECTORY_SEPARATOR){echo $_SERVER['SERVER_ADDR'];}else{echo @gethostbyname($_SERVER['SERVER_NAME']);} ?>)&nbsp;&nbsp;ä½ çš„IPåœ°å€æ˜¯ï¼š<?php echo @$_SERVER['REMOTE_ADDR'];?></td>
 
   </tr>
 
   <tr>
 
-    <td>·şÎñÆ÷±êÊ¶</td>
+    <td>æœåŠ¡å™¨æ ‡è¯†</td>
 
     <td colspan="3"><?php if($sysInfo['win_n'] != ''){echo $sysInfo['win_n'];}else{echo @php_uname();};?></td>
 
@@ -1212,11 +1212,11 @@ function displayData(dataJSON)
 
   <tr>
 
-    <td width="13%">·şÎñÆ÷²Ù×÷ÏµÍ³</td>
+    <td width="13%">æœåŠ¡å™¨æ“ä½œç³»ç»Ÿ</td>
 
-    <td width="37%"><?php $os = explode(" ", php_uname()); echo $os[0];?> &nbsp;ÄÚºË°æ±¾£º<?php if('/'==DIRECTORY_SEPARATOR){echo $os[2];}else{echo $os[1];} ?></td>
+    <td width="37%"><?php $os = explode(" ", php_uname()); echo $os[0];?> &nbsp;å†…æ ¸ç‰ˆæœ¬ï¼š<?php if('/'==DIRECTORY_SEPARATOR){echo $os[2];}else{echo $os[1];} ?></td>
 
-    <td width="13%">·şÎñÆ÷½âÒëÒıÇæ</td>
+    <td width="13%">æœåŠ¡å™¨è§£è¯‘å¼•æ“</td>
 
     <td width="37%"><?php echo $_SERVER['SERVER_SOFTWARE'];?></td>
 
@@ -1224,11 +1224,11 @@ function displayData(dataJSON)
 
   <tr>
 
-    <td>·şÎñÆ÷ÓïÑÔ</td>
+    <td>æœåŠ¡å™¨è¯­è¨€</td>
 
     <td><?php echo getenv("HTTP_ACCEPT_LANGUAGE");?></td>
 
-    <td>·şÎñÆ÷¶Ë¿Ú</td>
+    <td>æœåŠ¡å™¨ç«¯å£</td>
 
     <td><?php echo $_SERVER['SERVER_PORT'];?></td>
 
@@ -1236,11 +1236,11 @@ function displayData(dataJSON)
 
   <tr>
 
-	  <td>·şÎñÆ÷Ö÷»úÃû</td>
+	  <td>æœåŠ¡å™¨ä¸»æœºå</td>
 
 	  <td><?php if('/'==DIRECTORY_SEPARATOR ){echo $os[1];}else{echo $os[2];} ?></td>
 
-	  <td>¾ø¶ÔÂ·¾¶</td>
+	  <td>ç»å¯¹è·¯å¾„</td>
 
 	  <td><?php echo $_SERVER['DOCUMENT_ROOT']?str_replace('\\','/',$_SERVER['DOCUMENT_ROOT']):str_replace('\\','/',dirname(__FILE__));?></td>
 
@@ -1248,11 +1248,11 @@ function displayData(dataJSON)
 
   <tr>
 
-	  <td>¹ÜÀíÔ±ÓÊÏä</td>
+	  <td>ç®¡ç†å‘˜é‚®ç®±</td>
 
 	  <td><?php echo $_SERVER['SERVER_ADMIN'];?></td>
 
-		<td>Ì½ÕëÂ·¾¶</td>
+		<td>æ¢é’ˆè·¯å¾„</td>
 
 		<td><?php echo str_replace('\\','/',__FILE__)?str_replace('\\','/',__FILE__):$_SERVER['SCRIPT_FILENAME'];?></td>
 
@@ -1266,44 +1266,44 @@ function displayData(dataJSON)
 
 <table>
 
-  <tr><th colspan="6">·şÎñÆ÷ÊµÊ±Êı¾İ</th></tr>
+  <tr><th colspan="6">æœåŠ¡å™¨å®æ—¶æ•°æ®</th></tr>
 
   <tr>
 
-    <td width="13%" >·şÎñÆ÷µ±Ç°Ê±¼ä</td>
+    <td width="13%" >æœåŠ¡å™¨å½“å‰æ—¶é—´</td>
 
     <td width="37%" ><span id="stime"><?php echo $stime;?></span></td>
 
-    <td width="13%" >·şÎñÆ÷ÒÑÔËĞĞÊ±¼ä</td>
+    <td width="13%" >æœåŠ¡å™¨å·²è¿è¡Œæ—¶é—´</td>
 
     <td width="37%" colspan="3"><span id="uptime"><?php echo $uptime;?></span></td>
 
   </tr>
   <tr>
 
-    <td width="13%">CPUĞÍºÅ [<?php echo $sysInfo['cpu']['num'];?>ºË]</td>
+    <td width="13%">CPUå‹å· [<?php echo $sysInfo['cpu']['num'];?>æ ¸]</td>
 
     <td width="87%" colspan="5"><?php echo $sysInfo['cpu']['model'];?></td>
 
   </tr>
   <tr>
-    <td>CPUÊ¹ÓÃ×´¿ö</td>
-    <td colspan="5"><?php if('/'==DIRECTORY_SEPARATOR){echo $cpu_show." | <a href='".$phpSelf."?act=cpu_percentage' target='_blank' class='static'>²é¿´Í¼±í</a>";}else{echo "ÔİÊ±Ö»Ö§³ÖLinuxÏµÍ³";}?>
+    <td>CPUä½¿ç”¨çŠ¶å†µ</td>
+    <td colspan="5"><?php if('/'==DIRECTORY_SEPARATOR){echo $cpu_show." | <a href='".$phpSelf."?act=cpu_percentage' target='_blank' class='static'>æŸ¥çœ‹å›¾è¡¨</a>";}else{echo "æš‚æ—¶åªæ”¯æŒLinuxç³»ç»Ÿ";}?>
 	</td>
   </tr>
   <tr>
-    <td>Ó²ÅÌÊ¹ÓÃ×´¿ö</td>
+    <td>ç¡¬ç›˜ä½¿ç”¨çŠ¶å†µ</td>
     <td colspan="5">
-		×Ü¿Õ¼ä <?php echo $dt;?>&nbsp;G£¬
-		ÒÑÓÃ <font color='#333333'><span id="useSpace"><?php echo $du;?></span></font>&nbsp;G£¬
-		¿ÕÏĞ <font color='#333333'><span id="freeSpace"><?php echo $df;?></span></font>&nbsp;G£¬
-		Ê¹ÓÃÂÊ <span id="hdPercent"><?php echo $hdPercent;?></span>%
+		æ€»ç©ºé—´ <?php echo $dt;?>&nbsp;Gï¼Œ
+		å·²ç”¨ <font color='#333333'><span id="useSpace"><?php echo $du;?></span></font>&nbsp;Gï¼Œ
+		ç©ºé—² <font color='#333333'><span id="freeSpace"><?php echo $df;?></span></font>&nbsp;Gï¼Œ
+		ä½¿ç”¨ç‡ <span id="hdPercent"><?php echo $hdPercent;?></span>%
 		<div class="bar"><div id="barhdPercent" class="barli_black" style="width:<?php echo $hdPercent;?>%" >&nbsp;</div> </div>
 	</td>
   </tr>
   <tr>
 
-		<td>ÄÚ´æÊ¹ÓÃ×´¿ö</td>
+		<td>å†…å­˜ä½¿ç”¨çŠ¶å†µ</td>
 
 		<td colspan="5">
 
@@ -1327,55 +1327,55 @@ foreach ($tmp AS $v) {
 
 ?>
 
-          ÎïÀíÄÚ´æ£º¹²
+          ç‰©ç†å†…å­˜ï¼šå…±
 
           <font color='#CC0000'><?php echo $memTotal;?> </font>
 
-           , ÒÑÓÃ
+           , å·²ç”¨
 
           <font color='#CC0000'><span id="UsedMemory"><?php echo $mu;?></span></font>
 
-          , ¿ÕÏĞ
+          , ç©ºé—²
 
           <font color='#CC0000'><span id="FreeMemory"><?php echo $mf;?></span></font>
 
-          , Ê¹ÓÃÂÊ
+          , ä½¿ç”¨ç‡
 
 		  <span id="memPercent"><?php echo $memPercent;?></span>
 
           <div class="bar"><div id="barmemPercent" class="barli_green" style="width:<?php echo $memPercent?>%" >&nbsp;</div> </div>
 <?php
-//ÅĞ¶ÏÈç¹ûcacheÎª0£¬²»ÏÔÊ¾
+//åˆ¤æ–­å¦‚æœcacheä¸º0ï¼Œä¸æ˜¾ç¤º
 if($sysInfo['memCached']>0)
 {
 ?>		
-		  Cache»¯ÄÚ´æÎª <span id="CachedMemory"><?php echo $mc;?></span>
-		  , Ê¹ÓÃÂÊ 
+		  CacheåŒ–å†…å­˜ä¸º <span id="CachedMemory"><?php echo $mc;?></span>
+		  , ä½¿ç”¨ç‡ 
           <span id="memCachedPercent"><?php echo $memCachedPercent;?></span>
-		  %	| Buffers»º³åÎª  <span id="Buffers"><?php echo $mb;?></span>
+		  %	| Buffersç¼“å†²ä¸º  <span id="Buffers"><?php echo $mb;?></span>
           <div class="bar"><div id="barmemCachedPercent" class="barli_blue" style="width:<?php echo $memCachedPercent?>%" >&nbsp;</div></div>
 
-          ÕæÊµÄÚ´æÊ¹ÓÃ
+          çœŸå®å†…å­˜ä½¿ç”¨
           <span id="memRealUsed"><?php echo $memRealUsed;?></span>
-		  , ÕæÊµÄÚ´æ¿ÕÏĞ
+		  , çœŸå®å†…å­˜ç©ºé—²
           <span id="memRealFree"><?php echo $memRealFree;?></span>
-		  , Ê¹ÓÃÂÊ
+		  , ä½¿ç”¨ç‡
           <span id="memRealPercent"><?php echo $memRealPercent;?></span>
           %
           <div class="bar_1"><div id="barmemRealPercent" class="barli_1" style="width:<?php echo $memRealPercent?>%" >&nbsp;</div></div> 
 <?php
 }
-//ÅĞ¶ÏÈç¹ûSWAPÇøÎª0£¬²»ÏÔÊ¾
+//åˆ¤æ–­å¦‚æœSWAPåŒºä¸º0ï¼Œä¸æ˜¾ç¤º
 if($sysInfo['swapTotal']>0)
 {
 ?>	
-          SWAPÇø£º¹²
+          SWAPåŒºï¼šå…±
           <?php echo $st;?>
-          , ÒÑÊ¹ÓÃ
+          , å·²ä½¿ç”¨
           <span id="swapUsed"><?php echo $su;?></span>
-          , ¿ÕÏĞ
+          , ç©ºé—²
           <span id="swapFree"><?php echo $sf;?></span>
-          , Ê¹ÓÃÂÊ
+          , ä½¿ç”¨ç‡
           <span id="swapPercent"><?php echo $swapPercent;?></span>
           %
           <div class="bar"><div id="barswapPercent" class="barli_red" style="width:<?php echo $swapPercent?>%" >&nbsp;</div> </div>
@@ -1388,7 +1388,7 @@ if($sysInfo['swapTotal']>0)
 
 	</tr>
 	  <tr>
-		<td>ÏµÍ³Æ½¾ù¸ºÔØ</td>
+		<td>ç³»ç»Ÿå¹³å‡è´Ÿè½½</td>
 		<td colspan="5" class="w_number"><span id="loadAvg"><?php echo $load;?></span></td>
 	</tr>
 
@@ -1402,7 +1402,7 @@ if($sysInfo['swapTotal']>0)
 
 <table>
 
-    <tr><th colspan="5">ÍøÂçÊ¹ÓÃ×´¿ö</th></tr>
+    <tr><th colspan="5">ç½‘ç»œä½¿ç”¨çŠ¶å†µ</th></tr>
 
 <?php for ($i = 2; $i < count($strs); $i++ ) : ?>
 
@@ -1411,10 +1411,10 @@ if($sysInfo['swapTotal']>0)
      <tr>
 
         <td width="13%"><?php echo $info[1][0]?> : </td>
-        <td width="29%">ÈëÍø: <font color='#CC0000'><span id="NetInput<?php echo $i?>"><?php echo $NetInput[$i]?></span></font></td>
-		<td width="14%">ÊµÊ±: <font color='#CC0000'><span id="NetInputSpeed<?php echo $i?>">0B/s</span></font></td>
-        <td width="29%">³öÍø: <font color='#CC0000'><span id="NetOut<?php echo $i?>"><?php echo $NetOut[$i]?></span></font></td>
-		<td width="14%">ÊµÊ±: <font color='#CC0000'><span id="NetOutSpeed<?php echo $i?>">0B/s</span></font></td>
+        <td width="29%">å…¥ç½‘: <font color='#CC0000'><span id="NetInput<?php echo $i?>"><?php echo $NetInput[$i]?></span></font></td>
+		<td width="14%">å®æ—¶: <font color='#CC0000'><span id="NetInputSpeed<?php echo $i?>">0B/s</span></font></td>
+        <td width="29%">å‡ºç½‘: <font color='#CC0000'><span id="NetOut<?php echo $i?>"><?php echo $NetOut[$i]?></span></font></td>
+		<td width="14%">å®æ—¶: <font color='#CC0000'><span id="NetOutSpeed<?php echo $i?>">0B/s</span></font></td>
 
     </tr>
 
@@ -1430,7 +1430,7 @@ if($sysInfo['swapTotal']>0)
 
   <tr>
 
-    <th colspan="4">PHPÒÑ±àÒëÄ£¿é¼ì²â</th>
+    <th colspan="4">PHPå·²ç¼–è¯‘æ¨¡å—æ£€æµ‹</th>
 
   </tr>
 
@@ -1466,11 +1466,11 @@ foreach ($able as $key=>$value) {
 
 <table>
 
-  <tr><th colspan="4">PHPÏà¹Ø²ÎÊı</th></tr>
+  <tr><th colspan="4">PHPç›¸å…³å‚æ•°</th></tr>
 
   <tr>
 
-    <td width="32%">PHPĞÅÏ¢£¨phpinfo£©£º</td>
+    <td width="32%">PHPä¿¡æ¯ï¼ˆphpinfoï¼‰ï¼š</td>
 
     <td width="18%">
 
@@ -1482,11 +1482,11 @@ foreach ($able as $key=>$value) {
 
 		?>
 
-    <?php echo (false!==eregi("phpinfo",$disFuns))? '<font color="red">¡Á</font>' :"<a href='$phpSelf?act=phpinfo' target='_blank'>PHPINFO</a>";?>
+    <?php echo (false!==eregi("phpinfo",$disFuns))? '<font color="red">Ã—</font>' :"<a href='$phpSelf?act=phpinfo' target='_blank'>PHPINFO</a>";?>
 
     </td>
 
-    <td width="32%">PHP°æ±¾£¨php_version£©£º</td>
+    <td width="32%">PHPç‰ˆæœ¬ï¼ˆphp_versionï¼‰ï¼š</td>
 
     <td width="18%"><?php echo PHP_VERSION;?></td>
 
@@ -1494,11 +1494,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>PHPÔËĞĞ·½Ê½£º</td>
+    <td>PHPè¿è¡Œæ–¹å¼ï¼š</td>
 
     <td><?php echo strtoupper(php_sapi_name());?></td>
 
-    <td>½Å±¾Õ¼ÓÃ×î´óÄÚ´æ£¨memory_limit£©£º</td>
+    <td>è„šæœ¬å ç”¨æœ€å¤§å†…å­˜ï¼ˆmemory_limitï¼‰ï¼š</td>
 
     <td><?php echo show("memory_limit");?></td>
 
@@ -1506,11 +1506,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>PHP°²È«Ä£Ê½£¨safe_mode£©£º</td>
+    <td>PHPå®‰å…¨æ¨¡å¼ï¼ˆsafe_modeï¼‰ï¼š</td>
 
     <td><?php echo show("safe_mode");?></td>
 
-    <td>POST·½·¨Ìá½»×î´óÏŞÖÆ£¨post_max_size£©£º</td>
+    <td>POSTæ–¹æ³•æäº¤æœ€å¤§é™åˆ¶ï¼ˆpost_max_sizeï¼‰ï¼š</td>
 
     <td><?php echo show("post_max_size");?></td>
 
@@ -1518,11 +1518,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>ÉÏ´«ÎÄ¼ş×î´óÏŞÖÆ£¨upload_max_filesize£©£º</td>
+    <td>ä¸Šä¼ æ–‡ä»¶æœ€å¤§é™åˆ¶ï¼ˆupload_max_filesizeï¼‰ï¼š</td>
 
     <td><?php echo show("upload_max_filesize");?></td>
 
-    <td>¸¡µãĞÍÊı¾İÏÔÊ¾µÄÓĞĞ§Î»Êı£¨precision£©£º</td>
+    <td>æµ®ç‚¹å‹æ•°æ®æ˜¾ç¤ºçš„æœ‰æ•ˆä½æ•°ï¼ˆprecisionï¼‰ï¼š</td>
 
     <td><?php echo show("precision");?></td>
 
@@ -1530,23 +1530,23 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>½Å±¾³¬Ê±Ê±¼ä£¨max_execution_time£©£º</td>
+    <td>è„šæœ¬è¶…æ—¶æ—¶é—´ï¼ˆmax_execution_timeï¼‰ï¼š</td>
 
-    <td><?php echo show("max_execution_time");?>Ãë</td>
+    <td><?php echo show("max_execution_time");?>ç§’</td>
 
-    <td>socket³¬Ê±Ê±¼ä£¨default_socket_timeout£©£º</td>
+    <td>socketè¶…æ—¶æ—¶é—´ï¼ˆdefault_socket_timeoutï¼‰ï¼š</td>
 
-    <td><?php echo show("default_socket_timeout");?>Ãë</td>
+    <td><?php echo show("default_socket_timeout");?>ç§’</td>
 
   </tr>
 
   <tr>
 
-    <td>PHPÒ³Ãæ¸ùÄ¿Â¼£¨doc_root£©£º</td>
+    <td>PHPé¡µé¢æ ¹ç›®å½•ï¼ˆdoc_rootï¼‰ï¼š</td>
 
     <td><?php echo show("doc_root");?></td>
 
-    <td>ÓÃ»§¸ùÄ¿Â¼£¨user_dir£©£º</td>
+    <td>ç”¨æˆ·æ ¹ç›®å½•ï¼ˆuser_dirï¼‰ï¼š</td>
 
     <td><?php echo show("user_dir");?></td>
 
@@ -1554,11 +1554,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>dl()º¯Êı£¨enable_dl£©£º</td>
+    <td>dl()å‡½æ•°ï¼ˆenable_dlï¼‰ï¼š</td>
 
     <td><?php echo show("enable_dl");?></td>
 
-    <td>Ö¸¶¨°üº¬ÎÄ¼şÄ¿Â¼£¨include_path£©£º</td>
+    <td>æŒ‡å®šåŒ…å«æ–‡ä»¶ç›®å½•ï¼ˆinclude_pathï¼‰ï¼š</td>
 
     <td><?php echo show("include_path");?></td>
 
@@ -1566,11 +1566,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>ÏÔÊ¾´íÎóĞÅÏ¢£¨display_errors£©£º</td>
+    <td>æ˜¾ç¤ºé”™è¯¯ä¿¡æ¯ï¼ˆdisplay_errorsï¼‰ï¼š</td>
 
     <td><?php echo show("display_errors");?></td>
 
-    <td>×Ô¶¨ÒåÈ«¾Ö±äÁ¿£¨register_globals£©£º</td>
+    <td>è‡ªå®šä¹‰å…¨å±€å˜é‡ï¼ˆregister_globalsï¼‰ï¼š</td>
 
     <td><?php echo show("register_globals");?></td>
 
@@ -1578,11 +1578,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>Êı¾İ·´Ğ±¸Ü×ªÒå£¨magic_quotes_gpc£©£º</td>
+    <td>æ•°æ®åæ–œæ è½¬ä¹‰ï¼ˆmagic_quotes_gpcï¼‰ï¼š</td>
 
     <td><?php echo show("magic_quotes_gpc");?></td>
 
-    <td>"&lt;?...?&gt;"¶Ì±êÇ©£¨short_open_tag£©£º</td>
+    <td>"&lt;?...?&gt;"çŸ­æ ‡ç­¾ï¼ˆshort_open_tagï¼‰ï¼š</td>
 
     <td><?php echo show("short_open_tag");?></td>
 
@@ -1590,11 +1590,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>"&lt;% %&gt;"ASP·ç¸ñ±ê¼Ç£¨asp_tags£©£º</td>
+    <td>"&lt;% %&gt;"ASPé£æ ¼æ ‡è®°ï¼ˆasp_tagsï¼‰ï¼š</td>
 
     <td><?php echo show("asp_tags");?></td>
 
-    <td>ºöÂÔÖØ¸´´íÎóĞÅÏ¢£¨ignore_repeated_errors£©£º</td>
+    <td>å¿½ç•¥é‡å¤é”™è¯¯ä¿¡æ¯ï¼ˆignore_repeated_errorsï¼‰ï¼š</td>
 
     <td><?php echo show("ignore_repeated_errors");?></td>
 
@@ -1602,11 +1602,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>ºöÂÔÖØ¸´µÄ´íÎóÔ´£¨ignore_repeated_source£©£º</td>
+    <td>å¿½ç•¥é‡å¤çš„é”™è¯¯æºï¼ˆignore_repeated_sourceï¼‰ï¼š</td>
 
     <td><?php echo show("ignore_repeated_source");?></td>
 
-    <td>±¨¸æÄÚ´æĞ¹Â©£¨report_memleaks£©£º</td>
+    <td>æŠ¥å‘Šå†…å­˜æ³„æ¼ï¼ˆreport_memleaksï¼‰ï¼š</td>
 
     <td><?php echo show("report_memleaks");?></td>
 
@@ -1614,11 +1614,11 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>×Ô¶¯×Ö·û´®×ªÒå£¨magic_quotes_gpc£©£º</td>
+    <td>è‡ªåŠ¨å­—ç¬¦ä¸²è½¬ä¹‰ï¼ˆmagic_quotes_gpcï¼‰ï¼š</td>
 
     <td><?php echo show("magic_quotes_gpc");?></td>
 
-    <td>Íâ²¿×Ö·û´®×Ô¶¯×ªÒå£¨magic_quotes_runtime£©£º</td>
+    <td>å¤–éƒ¨å­—ç¬¦ä¸²è‡ªåŠ¨è½¬ä¹‰ï¼ˆmagic_quotes_runtimeï¼‰ï¼š</td>
 
     <td><?php echo show("magic_quotes_runtime");?></td>
 
@@ -1626,57 +1626,57 @@ foreach ($able as $key=>$value) {
 
   <tr>
 
-    <td>´ò¿ªÔ¶³ÌÎÄ¼ş£¨allow_url_fopen£©£º</td>
+    <td>æ‰“å¼€è¿œç¨‹æ–‡ä»¶ï¼ˆallow_url_fopenï¼‰ï¼š</td>
 
     <td><?php echo show("allow_url_fopen");?></td>
 
-    <td>ÉùÃ÷argvºÍargc±äÁ¿£¨register_argc_argv£©£º</td>
+    <td>å£°æ˜argvå’Œargcå˜é‡ï¼ˆregister_argc_argvï¼‰ï¼š</td>
 
     <td><?php echo show("register_argc_argv");?></td>
 
   </tr>
   <tr>
-    <td>Cookie Ö§³Ö£º</td>
-    <td><?php echo isset($_COOKIE)?'<font color="green">¡Ì</font>' : '<font color="red">¡Á</font>';?></td>
-    <td>Æ´Ğ´¼ì²é£¨ASpell Library£©£º</td>
+    <td>Cookie æ”¯æŒï¼š</td>
+    <td><?php echo isset($_COOKIE)?'<font color="green">âˆš</font>' : '<font color="red">Ã—</font>';?></td>
+    <td>æ‹¼å†™æ£€æŸ¥ï¼ˆASpell Libraryï¼‰ï¼š</td>
     <td><?php echo isfun("aspell_check_raw");?></td>
   </tr>
    <tr>
-    <td>¸ß¾«¶ÈÊıÑ§ÔËËã£¨BCMath£©£º</td>
+    <td>é«˜ç²¾åº¦æ•°å­¦è¿ç®—ï¼ˆBCMathï¼‰ï¼š</td>
     <td><?php echo isfun("bcadd");?></td>
-    <td>PRELÏàÈİÓï·¨£¨PCRE£©£º</td>
+    <td>PRELç›¸å®¹è¯­æ³•ï¼ˆPCREï¼‰ï¼š</td>
     <td><?php echo isfun("preg_match");?></td>
    <tr>
-    <td>PDFÎÄµµÖ§³Ö£º</td>
+    <td>PDFæ–‡æ¡£æ”¯æŒï¼š</td>
     <td><?php echo isfun("pdf_close");?></td>
-    <td>SNMPÍøÂç¹ÜÀíĞ­Òé£º</td>
+    <td>SNMPç½‘ç»œç®¡ç†åè®®ï¼š</td>
     <td><?php echo isfun("snmpget");?></td>
   </tr> 
    <tr>
-    <td>VMailMgrÓÊ¼ş´¦Àí£º</td>
+    <td>VMailMgré‚®ä»¶å¤„ç†ï¼š</td>
     <td><?php echo isfun("vm_adduser");?></td>
-    <td>CurlÖ§³Ö£º</td>
+    <td>Curlæ”¯æŒï¼š</td>
     <td><?php echo isfun("curl_init");?></td>
   </tr> 
    <tr>
-    <td>SMTPÖ§³Ö£º</td>
-    <td><?php echo get_cfg_var("SMTP")?'<font color="green">¡Ì</font>' : '<font color="red">¡Á</font>';?></td>
-    <td>SMTPµØÖ·£º</td>
-    <td><?php echo get_cfg_var("SMTP")?get_cfg_var("SMTP"):'<font color="red">¡Á</font>';?></td>
+    <td>SMTPæ”¯æŒï¼š</td>
+    <td><?php echo get_cfg_var("SMTP")?'<font color="green">âˆš</font>' : '<font color="red">Ã—</font>';?></td>
+    <td>SMTPåœ°å€ï¼š</td>
+    <td><?php echo get_cfg_var("SMTP")?get_cfg_var("SMTP"):'<font color="red">Ã—</font>';?></td>
   </tr> 
 
 	<tr>
-		<td>Ä¬ÈÏÖ§³Öº¯Êı£¨enable_functions£©£º</td>
-		<td colspan="3"><a href='<?php echo $phpSelf;?>?act=Function' target='_blank' class='static'>ÇëµãÕâÀï²é¿´ÏêÏ¸£¡</a></td>		
+		<td>é»˜è®¤æ”¯æŒå‡½æ•°ï¼ˆenable_functionsï¼‰ï¼š</td>
+		<td colspan="3"><a href='<?php echo $phpSelf;?>?act=Function' target='_blank' class='static'>è¯·ç‚¹è¿™é‡ŒæŸ¥çœ‹è¯¦ç»†ï¼</a></td>		
 	</tr>
 	<tr>
-		<td>±»½ûÓÃµÄº¯Êı£¨disable_functions£©£º</td>
+		<td>è¢«ç¦ç”¨çš„å‡½æ•°ï¼ˆdisable_functionsï¼‰ï¼š</td>
 		<td colspan="3" class="word">
 <?php 
 $disFuns=get_cfg_var("disable_functions");
 if(empty($disFuns))
 {
-	echo '<font color=red>¡Á</font>';
+	echo '<font color=red>Ã—</font>';
 }
 else
 { 
@@ -1699,19 +1699,19 @@ else
 
 <a name="w_module"></a>
 
-<!--×é¼şĞÅÏ¢-->
+<!--ç»„ä»¶ä¿¡æ¯-->
 
 <table>
 
-  <tr><th colspan="4" >×é¼şÖ§³Ö</th></tr>
+  <tr><th colspan="4" >ç»„ä»¶æ”¯æŒ</th></tr>
 
   <tr>
 
-    <td width="32%">FTPÖ§³Ö£º</td>
+    <td width="32%">FTPæ”¯æŒï¼š</td>
 
     <td width="18%"><?php echo isfun("ftp_login");?></td>
 
-    <td width="32%">XML½âÎöÖ§³Ö£º</td>
+    <td width="32%">XMLè§£ææ”¯æŒï¼š</td>
 
     <td width="18%"><?php echo isfun("xml_set_object");?></td>
 
@@ -1719,11 +1719,11 @@ else
 
   <tr>
 
-    <td>SessionÖ§³Ö£º</td>
+    <td>Sessionæ”¯æŒï¼š</td>
 
     <td><?php echo isfun("session_start");?></td>
 
-    <td>SocketÖ§³Ö£º</td>
+    <td>Socketæ”¯æŒï¼š</td>
 
     <td><?php echo isfun("socket_accept");?></td>
 
@@ -1731,12 +1731,12 @@ else
 
   <tr>
 
-    <td>CalendarÖ§³Ö</td>
+    <td>Calendaræ”¯æŒ</td>
 
     <td><?php echo isfun('cal_days_in_month');?>
 	</td>
 
-    <td>ÔÊĞíURL´ò¿ªÎÄ¼ş£º</td>
+    <td>å…è®¸URLæ‰“å¼€æ–‡ä»¶ï¼š</td>
 
     <td><?php echo show("allow_url_fopen");?></td>
 
@@ -1744,7 +1744,7 @@ else
 
   <tr>
 
-    <td>GD¿âÖ§³Ö£º</td>
+    <td>GDåº“æ”¯æŒï¼š</td>
 
     <td>
 
@@ -1756,11 +1756,11 @@ else
 
 	        echo $gd_info["GD Version"];
 
-	    }else{echo '<font color="red">¡Á</font>';}
+	    }else{echo '<font color="red">Ã—</font>';}
 
 	?></td>
 
-    <td>Ñ¹ËõÎÄ¼şÖ§³Ö(Zlib)£º</td>
+    <td>å‹ç¼©æ–‡ä»¶æ”¯æŒ(Zlib)ï¼š</td>
 
     <td><?php echo isfun("gzclose");?></td>
 
@@ -1768,11 +1768,11 @@ else
 
   <tr>
 
-    <td>IMAPµç×ÓÓÊ¼şÏµÍ³º¯Êı¿â£º</td>
+    <td>IMAPç”µå­é‚®ä»¶ç³»ç»Ÿå‡½æ•°åº“ï¼š</td>
 
     <td><?php echo isfun("imap_close");?></td>
 
-    <td>Àú·¨ÔËËãº¯Êı¿â£º</td>
+    <td>å†æ³•è¿ç®—å‡½æ•°åº“ï¼š</td>
 
     <td><?php echo isfun("JDToGregorian");?></td>
 
@@ -1780,11 +1780,11 @@ else
 
   <tr>
 
-    <td>ÕıÔò±í´ïÊ½º¯Êı¿â£º</td>
+    <td>æ­£åˆ™è¡¨è¾¾å¼å‡½æ•°åº“ï¼š</td>
 
     <td><?php echo isfun("preg_match");?></td>
 
-    <td>WDDXÖ§³Ö£º</td>
+    <td>WDDXæ”¯æŒï¼š</td>
 
     <td><?php echo isfun("wddx_add_vars");?></td>
 
@@ -1792,11 +1792,11 @@ else
 
   <tr>
 
-    <td>Iconv±àÂë×ª»»£º</td>
+    <td>Iconvç¼–ç è½¬æ¢ï¼š</td>
 
     <td><?php echo isfun("iconv");?></td>
 
-    <td>mbstring£º</td>
+    <td>mbstringï¼š</td>
 
     <td><?php echo isfun("mb_eregi");?></td>
 
@@ -1804,11 +1804,11 @@ else
 
   <tr>
 
-    <td>¸ß¾«¶ÈÊıÑ§ÔËËã£º</td>
+    <td>é«˜ç²¾åº¦æ•°å­¦è¿ç®—ï¼š</td>
 
     <td><?php echo isfun("bcadd");?></td>
 
-    <td>LDAPÄ¿Â¼Ğ­Òé£º</td>
+    <td>LDAPç›®å½•åè®®ï¼š</td>
 
     <td><?php echo isfun("ldap_close");?></td>
 
@@ -1816,11 +1816,11 @@ else
 
   <tr>
 
-    <td>MCrypt¼ÓÃÜ´¦Àí£º</td>
+    <td>MCryptåŠ å¯†å¤„ç†ï¼š</td>
 
     <td><?php echo isfun("mcrypt_cbc");?></td>
 
-    <td>¹şÏ¡¼ÆËã£º</td>
+    <td>å“ˆç¨€è®¡ç®—ï¼š</td>
 
     <td><?php echo isfun("mhash_count");?></td>
 
@@ -1829,19 +1829,19 @@ else
 </table>
 
 <a name="w_module_other"></a>
-<!--µÚÈı·½×é¼şĞÅÏ¢-->
+<!--ç¬¬ä¸‰æ–¹ç»„ä»¶ä¿¡æ¯-->
 <table>
-  <tr><th colspan="4" >µÚÈı·½×é¼ş</th></tr>
+  <tr><th colspan="4" >ç¬¬ä¸‰æ–¹ç»„ä»¶</th></tr>
   <tr>
-    <td width="32%">Zend°æ±¾</td>
-    <td width="18%"><?php $zend_version = zend_version();if(empty($zend_version)){echo '<font color=red>¡Á</font>';}else{echo $zend_version;}?></td>
+    <td width="32%">Zendç‰ˆæœ¬</td>
+    <td width="18%"><?php $zend_version = zend_version();if(empty($zend_version)){echo '<font color=red>Ã—</font>';}else{echo $zend_version;}?></td>
     <td width="32%">
 <?php
 $PHP_VERSION = PHP_VERSION;
 $PHP_VERSION = substr($PHP_VERSION,2,1);
 if($PHP_VERSION > 2)
 {
-	echo "ZendGuardLoader[ÆôÓÃ]";
+	echo "ZendGuardLoader[å¯ç”¨]";
 }
 else
 {
@@ -1849,33 +1849,33 @@ else
 }
 ?>
 	</td>
-    <td width="18%"><?php if($PHP_VERSION > 2){echo (get_cfg_var("zend_loader.enable"))?'<font color=green>¡Ì</font>':'<font color=red>¡Á</font>';} else{if(function_exists('zend_optimizer_version')){	echo zend_optimizer_version();}else{	echo (get_cfg_var("zend_optimizer.optimization_level")||get_cfg_var("zend_extension_manager.optimizer_ts")||get_cfg_var("zend.ze1_compatibility_mode")||get_cfg_var("zend_extension_ts"))?'<font color=green>¡Ì</font>':'<font color=red>¡Á</font>';}}?></td>
+    <td width="18%"><?php if($PHP_VERSION > 2){echo (get_cfg_var("zend_loader.enable"))?'<font color=green>âˆš</font>':'<font color=red>Ã—</font>';} else{if(function_exists('zend_optimizer_version')){	echo zend_optimizer_version();}else{	echo (get_cfg_var("zend_optimizer.optimization_level")||get_cfg_var("zend_extension_manager.optimizer_ts")||get_cfg_var("zend.ze1_compatibility_mode")||get_cfg_var("zend_extension_ts"))?'<font color=green>âˆš</font>':'<font color=red>Ã—</font>';}}?></td>
   </tr>
   <tr>
     <td>eAccelerator</td>
-    <td><?php if((phpversion('eAccelerator'))!=''){echo phpversion('eAccelerator');}else{ echo "<font color=red>¡Á</font>";} ?></td>
+    <td><?php if((phpversion('eAccelerator'))!=''){echo phpversion('eAccelerator');}else{ echo "<font color=red>Ã—</font>";} ?></td>
     <td>ioncube</td>
-    <td><?php if(extension_loaded('ionCube Loader')){   $ys = ioncube_loader_iversion();   $gm = ".".(int)substr($ys,3,2);   echo ionCube_Loader_version().$gm;}else{echo "<font color=red>¡Á</font>";}?></td>
+    <td><?php if(extension_loaded('ionCube Loader')){   $ys = ioncube_loader_iversion();   $gm = ".".(int)substr($ys,3,2);   echo ionCube_Loader_version().$gm;}else{echo "<font color=red>Ã—</font>";}?></td>
   </tr>
   <tr>
     <td>XCache</td>
-    <td><?php if((phpversion('XCache'))!=''){echo phpversion('XCache');}else{ echo "<font color=red>¡Á</font>";} ?></td>
+    <td><?php if((phpversion('XCache'))!=''){echo phpversion('XCache');}else{ echo "<font color=red>Ã—</font>";} ?></td>
     <td>APC</td>
-    <td><?php if((phpversion('APC'))!=''){echo phpversion('APC');}else{ echo "<font color=red>¡Á</font>";} ?></td>
+    <td><?php if((phpversion('APC'))!=''){echo phpversion('APC');}else{ echo "<font color=red>Ã—</font>";} ?></td>
   </tr>
 </table>
 
 <a name="w_db"></a>
 
-<!--Êı¾İ¿âÖ§³Ö-->
+<!--æ•°æ®åº“æ”¯æŒ-->
 
 <table>
 
-  <tr><th colspan="4">Êı¾İ¿âÖ§³Ö</th></tr>
+  <tr><th colspan="4">æ•°æ®åº“æ”¯æŒ</th></tr>
 
   <tr>
 
-    <td width="32%">MySQL Êı¾İ¿â£º</td>
+    <td width="32%">MySQL æ•°æ®åº“ï¼š</td>
 
     <td width="18%"><?php echo isfun("mysqli_close");?>
 
@@ -1884,9 +1884,9 @@ else
 
         $s = @mysqli_get_server_info();
 
-        $s = $s ? '&nbsp; mysqli_server °æ±¾£º'.$s : '';
+        $s = $s ? '&nbsp; mysqli_server ç‰ˆæœ¬ï¼š'.$s : '';
 
-	    $c = '&nbsp; mysqli_client °æ±¾£º'.@mysqli_get_client_info();
+	    $c = '&nbsp; mysqli_client ç‰ˆæœ¬ï¼š'.@mysqli_get_client_info();
 
         echo $s;
 
@@ -1896,7 +1896,7 @@ else
 
 	</td>
 
-    <td width="32%">ODBC Êı¾İ¿â£º</td>
+    <td width="32%">ODBC æ•°æ®åº“ï¼š</td>
 
     <td width="18%"><?php echo isfun("odbc_close");?></td>
 
@@ -1904,11 +1904,11 @@ else
 
   <tr>
 
-    <td>Oracle Êı¾İ¿â£º</td>
+    <td>Oracle æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("ora_close");?></td>
 
-    <td>SQL Server Êı¾İ¿â£º</td>
+    <td>SQL Server æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("mssql_close");?></td>
 
@@ -1916,11 +1916,11 @@ else
 
   <tr>
 
-    <td>dBASE Êı¾İ¿â£º</td>
+    <td>dBASE æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("dbase_close");?></td>
 
-    <td>mSQL Êı¾İ¿â£º</td>
+    <td>mSQL æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("msql_close");?></td>
 
@@ -1928,11 +1928,11 @@ else
 
   <tr>
 
-    <td>SQLite Êı¾İ¿â£º</td>
+    <td>SQLite æ•°æ®åº“ï¼š</td>
 
-    <td><?php if(extension_loaded('sqlite3')) {$sqliteVer = SQLite3::version();echo '<font color=green>¡Ì</font>¡¡';echo "SQLite3¡¡Ver ";echo $sqliteVer[versionString];}else {echo isfun("sqlite_close");if(isfun("sqlite_close") == '<font color="green">¡Ì</font>') {echo "&nbsp; °æ±¾£º ".@sqlite_libversion();}}?></td>
+    <td><?php if(extension_loaded('sqlite3')) {$sqliteVer = SQLite3::version();echo '<font color=green>âˆš</font>ã€€';echo "SQLite3ã€€Ver ";echo $sqliteVer[versionString];}else {echo isfun("sqlite_close");if(isfun("sqlite_close") == '<font color="green">âˆš</font>') {echo "&nbsp; ç‰ˆæœ¬ï¼š ".@sqlite_libversion();}}?></td>
 
-    <td>Hyperwave Êı¾İ¿â£º</td>
+    <td>Hyperwave æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("hw_close");?></td>
 
@@ -1940,25 +1940,25 @@ else
 
   <tr>
 
-    <td>Postgre SQL Êı¾İ¿â£º</td>
+    <td>Postgre SQL æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("pg_close"); ?></td>
 
-    <td>Informix Êı¾İ¿â£º</td>
+    <td>Informix æ•°æ®åº“ï¼š</td>
 
     <td><?php echo isfun("ifx_close");?></td>
 
   </tr>
   <tr>
-    <td>DBA Êı¾İ¿â£º</td>
+    <td>DBA æ•°æ®åº“ï¼š</td>
     <td><?php echo isfun("dba_close");?></td>
-    <td>DBM Êı¾İ¿â£º</td>
+    <td>DBM æ•°æ®åº“ï¼š</td>
     <td><?php echo isfun("dbmclose");?></td>
   </tr>    
   <tr>
-    <td>FilePro Êı¾İ¿â£º</td>
+    <td>FilePro æ•°æ®åº“ï¼š</td>
     <td><?php echo isfun("filepro_fieldcount");?></td>
-    <td>SyBase Êı¾İ¿â£º</td>
+    <td>SyBase æ•°æ®åº“ï¼š</td>
     <td><?php echo isfun("sybase_close");?></td>
   </tr> 
 
@@ -1968,42 +1968,42 @@ else
 
 <form action="<?php echo $_SERVER[PHP_SELF]."#bottom";?>" method="post">
 
-<!--·şÎñÆ÷ĞÔÄÜ¼ì²â-->
+<!--æœåŠ¡å™¨æ€§èƒ½æ£€æµ‹-->
 
 <table>
 
-  <tr><th colspan="5">·şÎñÆ÷ĞÔÄÜ¼ì²â</th></tr>
+  <tr><th colspan="5">æœåŠ¡å™¨æ€§èƒ½æ£€æµ‹</th></tr>
 
   <tr align="center">
 
-    <td width="19%">²ÎÕÕ¶ÔÏó</td>
+    <td width="19%">å‚ç…§å¯¹è±¡</td>
 
-    <td width="17%">ÕûÊıÔËËãÄÜÁ¦¼ì²â<br />(1+1ÔËËã300Íò´Î)</td>
+    <td width="17%">æ•´æ•°è¿ç®—èƒ½åŠ›æ£€æµ‹<br />(1+1è¿ç®—300ä¸‡æ¬¡)</td>
 
-    <td width="17%">¸¡µãÔËËãÄÜÁ¦¼ì²â<br />(Ô²ÖÜÂÊ¿ªÆ½·½300Íò´Î)</td>
+    <td width="17%">æµ®ç‚¹è¿ç®—èƒ½åŠ›æ£€æµ‹<br />(åœ†å‘¨ç‡å¼€å¹³æ–¹300ä¸‡æ¬¡)</td>
 
-    <td width="17%">Êı¾İI/OÄÜÁ¦¼ì²â<br />(¶ÁÈ¡10KÎÄ¼ş1Íò´Î)</td>
+    <td width="17%">æ•°æ®I/Oèƒ½åŠ›æ£€æµ‹<br />(è¯»å–10Kæ–‡ä»¶1ä¸‡æ¬¡)</td>
 
-    <td width="30%">CPUĞÅÏ¢</td>
+    <td width="30%">CPUä¿¡æ¯</td>
 
   </tr>
   <tr align="center">
-    <td align="left">ÃÀ¹ú LinodeVPS</td>
-    <td>0.357Ãë</td>
-    <td>0.802Ãë</td>
-    <td>0.023Ãë</td>
+    <td align="left">ç¾å›½ LinodeVPS</td>
+    <td>0.357ç§’</td>
+    <td>0.802ç§’</td>
+    <td>0.023ç§’</td>
     <td align="left">4 x Xeon L5520 @ 2.27GHz</td>
   </tr> 
 
   <tr align="center">
 
-    <td align="left">ÃÀ¹ú PhotonVPS.com</td>
+    <td align="left">ç¾å›½ PhotonVPS.com</td>
 
-    <td>0.431Ãë</td>
+    <td>0.431ç§’</td>
 
-    <td>1.024Ãë</td>
+    <td>1.024ç§’</td>
 
-    <td>0.034Ãë</td>
+    <td>0.034ç§’</td>
 
     <td align="left">8 x Xeon E5520 @ 2.27GHz</td>
 
@@ -2011,13 +2011,13 @@ else
 
   <tr align="center">
 
-    <td align="left">µÂ¹ú SpaceRich.com</td>
+    <td align="left">å¾·å›½ SpaceRich.com</td>
 
-    <td>0.421Ãë</td>
+    <td>0.421ç§’</td>
 
-    <td>1.003Ãë</td>
+    <td>1.003ç§’</td>
 
-    <td>0.038Ãë</td>
+    <td>0.038ç§’</td>
 
     <td align="left">4 x Core i7 920 @ 2.67GHz</td>
 
@@ -2025,13 +2025,13 @@ else
 
   <tr align="center">
 
-    <td align="left">ÃÀ¹ú RiZie.com</td>
+    <td align="left">ç¾å›½ RiZie.com</td>
 
-    <td>0.521Ãë</td>
+    <td>0.521ç§’</td>
 
-    <td>1.559Ãë</td>
+    <td>1.559ç§’</td>
 
-    <td>0.054Ãë</td>
+    <td>0.054ç§’</td>
 
     <td align="left">2 x Pentium4 3.00GHz</td>
 
@@ -2039,13 +2039,13 @@ else
 
   <tr align="center">
 
-    <td align="left">°£¼° CitynetHost.com</a></td>
+    <td align="left">åŸƒåŠ CitynetHost.com</a></td>
 
-    <td>0.343Ãë</td>
+    <td>0.343ç§’</td>
 
-    <td>0.761Ãë</td>
+    <td>0.761ç§’</td>
 
-    <td>0.023Ãë</td>
+    <td>0.023ç§’</td>
 
     <td align="left">2 x Core2Duo E4600 @ 2.40GHz</td>
 
@@ -2053,13 +2053,13 @@ else
 
   <tr align="center">
 
-    <td align="left">ÃÀ¹ú IXwebhosting.com</td>
+    <td align="left">ç¾å›½ IXwebhosting.com</td>
 
-    <td>0.535Ãë</td>
+    <td>0.535ç§’</td>
 
-    <td>1.607Ãë</td>
+    <td>1.607ç§’</td>
 
-    <td>0.058Ãë</td>
+    <td>0.058ç§’</td>
 
     <td align="left">4 x Xeon E5530 @ 2.40GHz</td>
 
@@ -2067,13 +2067,13 @@ else
 
   <tr align="center">
 
-    <td>±¾Ì¨·şÎñÆ÷</td>
+    <td>æœ¬å°æœåŠ¡å™¨</td>
 
-    <td><?php echo $valInt;?><br /><input class="btn" name="act" type="submit" value="ÕûĞÍ²âÊÔ" /></td>
+    <td><?php echo $valInt;?><br /><input class="btn" name="act" type="submit" value="æ•´å‹æµ‹è¯•" /></td>
 
-    <td><?php echo $valFloat;?><br /><input class="btn" name="act" type="submit" value="¸¡µã²âÊÔ" /></td>
+    <td><?php echo $valFloat;?><br /><input class="btn" name="act" type="submit" value="æµ®ç‚¹æµ‹è¯•" /></td>
 
-    <td><?php echo $valIo;?><br /><input class="btn" name="act" type="submit" value="IO²âÊÔ" /></td>
+    <td><?php echo $valIo;?><br /><input class="btn" name="act" type="submit" value="IOæµ‹è¯•" /></td>
 
     <td></td>
 
@@ -2088,20 +2088,20 @@ else
 <input type="hidden" name="pIo" value="<?php echo $valIo;?>" />
 
 <a name="w_networkspeed"></a>
-<!--ÍøÂçËÙ¶È²âÊÔ-->
+<!--ç½‘ç»œé€Ÿåº¦æµ‹è¯•-->
 <table>
-	<tr><th colspan="3">ÍøÂçËÙ¶È²âÊÔ</th></tr>
+	<tr><th colspan="3">ç½‘ç»œé€Ÿåº¦æµ‹è¯•</th></tr>
   <tr>
-    <td width="19%" align="center"><input name="act" type="submit" class="btn" value="¿ªÊ¼²âÊÔ" />
+    <td width="19%" align="center"><input name="act" type="submit" class="btn" value="å¼€å§‹æµ‹è¯•" />
         <br />
-	Ïò¿Í»§¶Ë´«ËÍ1000k×Ö½ÚÊı¾İ<br />
-	´ø¿í±ÈÀı°´ÀíÏëÖµ¼ÆËã
+	å‘å®¢æˆ·ç«¯ä¼ é€1000kå­—èŠ‚æ•°æ®<br />
+	å¸¦å®½æ¯”ä¾‹æŒ‰ç†æƒ³å€¼è®¡ç®—
 	</td>
     <td width="81%" align="center" >
 
   <table align="center" width="550" border="0" cellspacing="0" cellpadding="0" >
     <tr >
-    <td height="15" width="50">´ø¿í</td>
+    <td height="15" width="50">å¸¦å®½</td>
 	<td height="15" width="50">1M</td>
     <td height="15" width="50">2M</td>
     <td height="15" width="50">3M</td>
@@ -2139,7 +2139,7 @@ else
    </td>
   </tr>
   </table>
-  <?php echo (isset($_GET['speed']))?"ÏÂÔØ1000KBÊı¾İÓÃÊ± <font color='#cc0000'>".$_GET['speed']."</font> ºÁÃë£¬ÏÂÔØËÙ¶È£º"."<font color='#cc0000'>".$speed."</font>"." kb/s£¬Ğè²âÊÔ¶à´ÎÈ¡Æ½¾ùÖµ£¬³¬¹ı10MÖ±½Ó¿´ÏÂÔØËÙ¶È":"<font color='#cc0000'>&nbsp;Î´Ì½²â&nbsp;</font>" ?>
+  <?php echo (isset($_GET['speed']))?"ä¸‹è½½1000KBæ•°æ®ç”¨æ—¶ <font color='#cc0000'>".$_GET['speed']."</font> æ¯«ç§’ï¼Œä¸‹è½½é€Ÿåº¦ï¼š"."<font color='#cc0000'>".$speed."</font>"." kb/sï¼Œéœ€æµ‹è¯•å¤šæ¬¡å–å¹³å‡å€¼ï¼Œè¶…è¿‡10Mç›´æ¥çœ‹ä¸‹è½½é€Ÿåº¦":"<font color='#cc0000'>&nbsp;æœªæ¢æµ‹&nbsp;</font>" ?>
 
     </td>
   </tr>
@@ -2147,11 +2147,11 @@ else
 
 <a name="w_MySQL"></a>
 
-<!--MySQLÊı¾İ¿âÁ¬½Ó¼ì²â-->
+<!--MySQLæ•°æ®åº“è¿æ¥æ£€æµ‹-->
 
 <table>
 
-	<tr><th colspan="3">MySQLÊı¾İ¿âÁ¬½Ó¼ì²â</th></tr>
+	<tr><th colspan="3">MySQLæ•°æ®åº“è¿æ¥æ£€æµ‹</th></tr>
 
   <tr>
 
@@ -2159,19 +2159,19 @@ else
 
     <td width="60%">
 
-      µØÖ·£º<input type="text" name="host" value="localhost" size="10" />
+      åœ°å€ï¼š<input type="text" name="host" value="localhost" size="10" />
 
-      ¶Ë¿Ú£º<input type="text" name="port" value="3306" size="10" />
+      ç«¯å£ï¼š<input type="text" name="port" value="3306" size="10" />
 
-      ÓÃ»§Ãû£º<input type="text" name="login" size="10" />
+      ç”¨æˆ·åï¼š<input type="text" name="login" size="10" />
 
-      ÃÜÂë£º<input type="password" name="password" size="10" />
+      å¯†ç ï¼š<input type="password" name="password" size="10" />
 
     </td>
 
     <td width="25%">
 
-      <input class="btn" type="submit" name="act" value="MySQL¼ì²â" />
+      <input class="btn" type="submit" name="act" value="MySQLæ£€æµ‹" />
 
     </td>
 
@@ -2181,7 +2181,7 @@ else
 
   <?php
 
-  if ($_POST['act'] == 'MySQL¼ì²â') {
+  if ($_POST['act'] == 'MySQLæ£€æµ‹') {
 
   	if(function_exists("mysqli_close")==1) {
 
@@ -2189,17 +2189,17 @@ else
 
   		if ($link){
 
-  			echo "<script>alert('Á¬½Óµ½MySqlÊı¾İ¿âÕı³£')</script>";
+  			echo "<script>alert('è¿æ¥åˆ°MySqlæ•°æ®åº“æ­£å¸¸')</script>";
 
   		} else {
 
-  			echo "<script>alert('ÎŞ·¨Á¬½Óµ½MySqlÊı¾İ¿â£¡')</script>";
+  			echo "<script>alert('æ— æ³•è¿æ¥åˆ°MySqlæ•°æ®åº“ï¼')</script>";
 
   		}
 
   	} else {
 
-  		echo "<script>alert('·şÎñÆ÷²»Ö§³ÖMySQLÊı¾İ¿â£¡')</script>";
+  		echo "<script>alert('æœåŠ¡å™¨ä¸æ”¯æŒMySQLæ•°æ®åº“ï¼')</script>";
 
   	}
 
@@ -2209,11 +2209,11 @@ else
 	
 <a name="w_function"></a>
 
-<!--º¯Êı¼ì²â-->
+<!--å‡½æ•°æ£€æµ‹-->
 
 <table>
 
-	<tr><th colspan="3">º¯Êı¼ì²â</th></tr>
+	<tr><th colspan="3">å‡½æ•°æ£€æµ‹</th></tr>
 
   <tr>
 
@@ -2221,7 +2221,7 @@ else
 
     <td width="60%">
 
-      ÇëÊäÈëÄúÒª¼ì²âµÄº¯Êı£º
+      è¯·è¾“å…¥æ‚¨è¦æ£€æµ‹çš„å‡½æ•°ï¼š
 
       <input type="text" name="funName" size="50" />
 
@@ -2229,7 +2229,7 @@ else
 
     <td width="25%">
 
-      <input class="btn" type="submit" name="act" align="right" value="º¯Êı¼ì²â" />
+      <input class="btn" type="submit" name="act" align="right" value="å‡½æ•°æ£€æµ‹" />
 
     </td>
 
@@ -2237,7 +2237,7 @@ else
 
   <?php
 
-  if ($_POST['act'] == 'º¯Êı¼ì²â') {
+  if ($_POST['act'] == 'å‡½æ•°æ£€æµ‹') {
 
   	echo "<script>alert('$funRe')</script>";
 
@@ -2249,11 +2249,11 @@ else
 
 <a name="w_mail"></a>
 
-<!--ÓÊ¼ş·¢ËÍ¼ì²â-->
+<!--é‚®ä»¶å‘é€æ£€æµ‹-->
 
 <table>
 
-  <tr><th colspan="3">ÓÊ¼ş·¢ËÍ¼ì²â</th></tr>
+  <tr><th colspan="3">é‚®ä»¶å‘é€æ£€æµ‹</th></tr>
 
   <tr>
 
@@ -2261,7 +2261,7 @@ else
 
     <td width="60%">
 
-      ÇëÊäÈëÄúÒª¼ì²âµÄÓÊ¼şµØÖ·£º
+      è¯·è¾“å…¥æ‚¨è¦æ£€æµ‹çš„é‚®ä»¶åœ°å€ï¼š
 
       <input type="text" name="mailAdd" size="50" />
 
@@ -2269,7 +2269,7 @@ else
 
     <td width="25%">
 
-    <input class="btn" type="submit" name="act" value="ÓÊ¼ş¼ì²â" />
+    <input class="btn" type="submit" name="act" value="é‚®ä»¶æ£€æµ‹" />
 
     </td>
 
@@ -2277,7 +2277,7 @@ else
 
   <?php
 
-  if ($_POST['act'] == 'ÓÊ¼ş¼ì²â') {
+  if ($_POST['act'] == 'é‚®ä»¶æ£€æµ‹') {
 
   	echo "<script>alert('$mailRe')</script>";
 
@@ -2295,7 +2295,7 @@ else
 		<tr>
 			<td class="w_foot"><A HREF="http://www.Yahei.Net" target="_blank"><?php echo $title.$version;?></A></td>
 			<td class="w_foot"><?php $run_time = sprintf('%0.4f', microtime_float() - $time_start);?>Processed in <?php echo $run_time?> seconds. <?php echo memory_usage();?> memory usage.</td>
-			<td class="w_foot"><a href="#w_top">·µ»Ø¶¥²¿</a></td>
+			<td class="w_foot"><a href="#w_top">è¿”å›é¡¶éƒ¨</a></td>
 		</tr>
 	</table>
 
