@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 /* ---------------------------------------------------- */
 /* 程序名称: PHP探针-Yahei
 /* 程序功能: 探测系统的Web服务器运行环境
@@ -1875,7 +1875,7 @@ else
 
   <tr>
 
-    <td width="32%">MySQL 数据库：</td>
+    <td width="32%">MySQL 数据库(mysqli)：</td>
 
     <td width="18%"><?php echo isfun("mysqli_close");?>
 
@@ -1895,72 +1895,95 @@ else
     ?>
 
 	</td>
+    <td width="32%">MySQL 数据库(mysql)：</td>
 
-    <td width="32%">ODBC 数据库：</td>
+    <td width="18%"><?php echo isfun("mysql_close");?>
 
-    <td width="18%"><?php echo isfun("odbc_close");?></td>
+    <?php
+    if(function_exists("mysql_get_server_info")) {
 
+        $s = @mysql_get_server_info();
+
+        $s = $s ? '&nbsp; mysql_server 版本：'.$s : '';
+
+	    $c = '&nbsp; mysql_client 版本：'.@mysql_get_client_info();
+
+        echo $s;
+
+    }
+
+    ?>
+
+	</td>
   </tr>
-
   <tr>
+    <td>ODBC 数据库：</td>
+
+    <td><?php echo isfun("odbc_close");?></td>
+
+
+
+
 
     <td>Oracle 数据库：</td>
 
     <td><?php echo isfun("ora_close");?></td>
+</tr>  <tr>
 
     <td>SQL Server 数据库：</td>
 
     <td><?php echo isfun("mssql_close");?></td>
 
-  </tr>
+  
 
-  <tr>
 
     <td>dBASE 数据库：</td>
 
     <td><?php echo isfun("dbase_close");?></td>
-
+  </tr>  <tr>
     <td>mSQL 数据库：</td>
 
     <td><?php echo isfun("msql_close");?></td>
 
-  </tr>
 
-  <tr>
+
+
 
     <td>SQLite 数据库：</td>
 
     <td><?php if(extension_loaded('sqlite3')) {$sqliteVer = SQLite3::version();echo '<font color=green>√</font>　';echo "SQLite3　Ver ";echo $sqliteVer[versionString];}else {echo isfun("sqlite_close");if(isfun("sqlite_close") == '<font color="green">√</font>') {echo "&nbsp; 版本： ".@sqlite_libversion();}}?></td>
+  </tr>
 
+  <tr>
     <td>Hyperwave 数据库：</td>
 
     <td><?php echo isfun("hw_close");?></td>
 
-  </tr>
 
-  <tr>
 
     <td>Postgre SQL 数据库：</td>
 
     <td><?php echo isfun("pg_close"); ?></td>
-
+  </tr>
+  <tr>
     <td>Informix 数据库：</td>
 
     <td><?php echo isfun("ifx_close");?></td>
 
-  </tr>
-  <tr>
+
     <td>DBA 数据库：</td>
     <td><?php echo isfun("dba_close");?></td>
-    <td>DBM 数据库：</td>
-    <td><?php echo isfun("dbmclose");?></td>
   </tr>    
   <tr>
+    <td>DBM 数据库：</td>
+    <td><?php echo isfun("dbmclose");?></td>
+
     <td>FilePro 数据库：</td>
     <td><?php echo isfun("filepro_fieldcount");?></td>
+  </tr> <tr>
     <td>SyBase 数据库：</td>
     <td><?php echo isfun("sybase_close");?></td>
-  </tr> 
+</tr>
 
 </table>
 
@@ -2064,6 +2087,33 @@ else
     <td align="left">4 x Xeon E5530 @ 2.40GHz</td>
 
   </tr>
+  <tr align="center">
+
+    <td align="left">华为手机 HUAWEI MATE8</td>
+
+    <td>0.358秒</td>
+
+    <td>2.293秒</td>
+
+    <td>0.096秒</td>
+
+    <td align="left">8 Core ARMv7 Processor(VFPv4,NEON)@ 1850MHz</td>
+
+  </tr>
+ <tr align="center">
+
+    <td align="left">美国 Rackspace.com</td>
+
+    <td>0.108秒</td>
+
+    <td>0.405秒</td>
+
+    <td>0.016秒</td>
+
+    <td align="left">12 Core AMD Opteron(tm) Processor 4332 HE</td>
+
+  </tr>
+
 
   <tr align="center">
 
