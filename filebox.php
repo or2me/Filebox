@@ -21,8 +21,9 @@ error_reporting(1);
 $filefolder = "./";
 $sitetitle = $_SERVER['HTTP_HOST'];
 $user = 'admin';
-$pass = 'admin';
-$safe_num = 5;//设置多少次后禁止登陆，为0则不限制，建议为3-5
+$pass = '4d27b9ad6a7eb4b9826d373f146d85de';//加密方式md5($salt.$pass.$salt)
+$salt = 'www.iikira.com';
+$safe_num = 566;//设置多少次后禁止登陆，为0则不限制，建议为3-5
 $mail = 'i@hezi.be';//若有恶意登录，会发邮件到这个邮箱，前提是mail()函数可用！
 $meurl = $_SERVER['PHP_SELF'];
 $os = (DIRECTORY_SEPARATOR=='\\')?"windows":'linux';
@@ -43,12 +44,14 @@ if($_SESSION['error'] > $safe_num && $safe_num !== 0)printerror('您已经被限
 /* 需要浏览器开启Cookies才可使用                                */
 /****************************************************************/
 
-if ($_COOKIE['user'] != $user || $_COOKIE['pass'] != md5($pass)) {
-	if ($_REQUEST['user'] == $user && $_REQUEST['pass'] == $pass) {
+$a = $_REQUEST['pass'];
+$b = $salt.$a.$salt;
+if ($_COOKIE['user'] != $user || $_COOKIE['pass'] != md5(md5($salt).md5($pass))) {
+	if ($_REQUEST['user'] == $user && md5($b) == $pass) {
 	    setcookie('user',$user,time()+60*60*24*1);
-	    setcookie('pass',md5($pass),time()+60*60*24*1);
+	    setcookie('pass',md5(md5($salt).md5($pass)),time()+60*60*24*1);
 	}else{
-		if ($_REQUEST['user'] == $user || $_REQUEST['pass']) $er = true;
+		if ($_REQUEST['user'] == $user || $a) $er = true;
 		login($er);
     exit;
 	}
