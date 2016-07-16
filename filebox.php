@@ -54,7 +54,7 @@ if ($_COOKIE['user'] != $user || $_COOKIE['pass'] != $encookie) {
 	    setcookie('user',$user,time()+60*60*24*1);
 	    setcookie('pass',$encookie,time()+60*60*24*1, NULL, NULL, NULL, TRUE);
 	}else{
-		if ($_REQUEST['user'] == $user || $a) $er = true;
+		if ($_REQUEST['user'] == $user || $_REQUEST['pass']) $er = true;
 		login($er);
     exit;
 	}
